@@ -3,7 +3,8 @@ import { Button, View, Image, Pressable,Text } from 'react-native';
 import { createDrawerNavigator, DrawerActions } from '@react-navigation/drawer';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 
-function HomeScreen() {
+const HomeScreen = () =>{
+
   const navigation = useNavigation();
 
   return (
@@ -20,7 +21,7 @@ function HomeScreen() {
   );
 }
 
-function NotificationsScreen({ navigation }) {
+const NotificationsScreen = ({ navigation }) =>{
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Button onPress={() => navigation.goBack()} title="Go back home" />
@@ -30,7 +31,7 @@ function NotificationsScreen({ navigation }) {
 
 const Drawer = createDrawerNavigator();
 
-function CustomHeader() {
+const CustomHeader = () =>{
   const navigation = useNavigation();
 
   return (
@@ -44,7 +45,8 @@ function CustomHeader() {
   );
 }
 
-export default function App() {
+const App = () =>{
+
   return (
     <NavigationContainer>
       <Drawer.Navigator  initialRouteName="Home">
@@ -59,5 +61,5 @@ export default function App() {
   );
 }
 
+export default React.memo(App);
 
-export default App;
